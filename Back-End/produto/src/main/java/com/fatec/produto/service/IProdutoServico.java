@@ -2,12 +2,13 @@ package com.fatec.produto.service;
 
 import java.util.List;
 import java.util.Optional;
+import com.fatec.produto.model.Catalogo;
 import com.fatec.produto.model.Produto;
 
 public interface IProdutoServico {
-    public List<Produto> consultaCatalogo();
+    public List<Catalogo> consultaCatalogo();
 
-    public List<Produto> consultaPorDescricao();
+    public List<Catalogo> consultaPorDescricao(String descricao);
 
     public Optional<Produto> cadastrar(Produto produto);
 

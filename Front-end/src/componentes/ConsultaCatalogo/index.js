@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import ConverteBase64ToImage from "./ConverteBase64ToImage";
 import "./styles.css";
+
 const ConsultaCatalogo = () => {
   const [produtos, setProdutos] = useState([]);
   const [erro, setErro] = useState(null);
@@ -40,6 +43,7 @@ const ConsultaCatalogo = () => {
             <th>Quantidade</th>
             <th>Valor Unitário</th>
             <th>Valor Total</th>
+            <th>Imagem</th>
           </tr>
         </thead>
         <tbody>
@@ -51,6 +55,11 @@ const ConsultaCatalogo = () => {
               <td>{produto.quantidadeU}</td>
               <td>{produto.valUnitario}</td>
               <td>{produto.valTotal}</td>
+              <td>
+                <img src = {ConverteBase64ToImage(produto.imagem)}
+                alt = "Imagem"
+                />
+              </td>
             </tr>
           ))}
         </tbody>
